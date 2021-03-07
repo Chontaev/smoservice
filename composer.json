@@ -1,0 +1,26 @@
+{
+    "name": "chontaev/smoservice",
+    "description": "Simple package for smoservice",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chontaev",
+            "email": "adgjoed1@gmail.com"
+        }
+    ], 
+    "autoload": {
+        "psr-4": {
+            "Smoservice\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel":{
+            "providers":[
+                "Smoservice\\SmoServiceProvider"   
+            ]
+        }
+    }
+}
