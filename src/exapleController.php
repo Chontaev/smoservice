@@ -29,36 +29,40 @@ class KasaController extends Controller
         $this->order_id     =   17;
     } 
     public function get_balance(){
-        return Smoservice::getBalance(
-            $this->user_id, 
-            $this->api_key, 
-            $this->balance
-        );
+        $data = [
+            "user_id" => $this->user_id,
+            "api_key" => $this->api_key,
+            "action"  => $this->balance,
+        ];
+        return Smoservice::getBalance($data);
     } 
     public function get_services(){
-        return Smoservice::getService(
-            $this->user_id, 
-            $this->api_key, 
-            $this->services 
-        );
+        $data = [
+            "user_id" => $this->user_id,
+            "api_key" => $this->api_key,
+            "action"  => $this->services,
+        ];
+        return Smoservice::getService($data);
     }
     public function create_order(){
-        return Smoservice::createOrder(
-            $this->user_id, 
-            $this->api_key, 
-            $this->create_order, 
-            $this->service_id, 
-            $this->count, 
-            $this->url
-        );
+        $data = [
+            "user_id"     => $this->user_id,
+            "api_key"     => $this->api_key,
+            "action"      => $this->create_order,
+            "service_id"  => $this->service_id,
+            "count"       => $this->count,
+            "url"         => $this->url,
+        ];
+        return Smoservice::createOrder($data);
     }
     public function check_order(){
-        return Smoservice::checkOrder(
-            $this->user_id, 
-            $this->api_key,
-            $this->check_order, 
-            $this->order_id
-        );
+        $data = [
+            "user_id"     => $this->user_id,
+            "api_key"     => $this->api_key,
+            "action"      => $this->create_order,
+            "order_id"  => $this->order_id,
+        ];
+        return Smoservice::checkOrder($data);
     }
 
 }
