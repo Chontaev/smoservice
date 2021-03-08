@@ -10,32 +10,32 @@ class Smoservice{
         ];
         return view("smoservice::form",compact('data'));
     }
-    public static function getService(int $user_id,string $api_key,float $action){
+    public static function getService(string $user_id,string $api_key,string $action){
         $data = [
             "user_id" => $user_id,
             "api_key" => $api_key,
             "action" => $action,
         ];
-        return view("Smoservice::form",compact('data'));
+        return view("smoservice::form",compact('data'));
     }
-    public static function createOrder(int $user_id,string $api_key,float $action, int $service_id,int $count,string $url){
+    public static function createOrder(string $user_id,string $api_key,string $action, string $service_id,string $count,string $url){
         $data = [
             "user_id" => $user_id,
             "api_key" => $api_key,
-            "action" => $services,
+            "action" => $action,
             "service_id" => $service_id,
             "count" => $count,
             "url" => $url,
         ];
-        return view("Smoservice::form",compact('data'));
+        return view("smoservice::form",compact('data'));
     }
-    public static function checkOrder(int $user_id,string $api_key,float $action, int $service_id,int $count,string $url){
+    public static function checkOrder(int $user_id,string $api_key,string $action, int $order_id){
         $data = [
             "user_id" => $user_id,
             "api_key" => $api_key,
-            "action" => $services,
+            "action" => $action,
             "order_id" => $order_id,
         ];
-        return view("Smoservice::form",compact('data'));
+        return view("smoservice::form",compact('data'));
     }
 }
