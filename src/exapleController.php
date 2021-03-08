@@ -17,20 +17,48 @@ class KasaController extends Controller
     public $url;
 
     public function __construct(){
-        $this->user_id = 248049;
-        $this->api_key = '880044EDD804B499CFED3CF611E23904';
+        $this->user_id      =   248049;
+        $this->api_key      =  '880044EDD804B499CFED3CF611E23904';
+        $this->balance      =  'balance';
+        $this->services     =  'services';
+        $this->create_order =  'create_order';
+        $this->service_id   =   807;
+        $this->count        =   4000;
+        $this->url          =  'https://www.youtube.com/user/smoserviceru';
+        $this->check_order  =  'check_order';
+        $this->order_id     =   17;
     } 
     public function get_balance(){
-        return Smoservice::getBalance(248049,'880044EDD804B499CFED3CF611E23904',"balance");
+        return Smoservice::getBalance(
+            $this->user_id, 
+            $this->api_key, 
+            $this->balance
+        );
     } 
     public function get_services(){
-        return Smoservice::getService(248049,'880044EDD804B499CFED3CF611E23904',"services");
+        return Smoservice::getService(
+            $this->user_id, 
+            $this->api_key, 
+            $this->services 
+        );
     }
     public function create_order(){
-        return Smoservice::createOrder(248049,'880044EDD804B499CFED3CF611E23904',"create_order",807,3500,'	https://www.youtube.com/user/smoserviceru');
+        return Smoservice::createOrder(
+            $this->user_id, 
+            $this->api_key, 
+            $this->create_order, 
+            $this->service_id, 
+            $this->count, 
+            $this->url
+        );
     }
     public function check_order(){
-        return Smoservice::checkOrder(248049,'880044EDD804B499CFED3CF611E23904',"check_order",17);
+        return Smoservice::checkOrder(
+            $this->user_id, 
+            $this->api_key,
+            $this->check_order, 
+            $this->order_id
+        );
     }
 
 }
