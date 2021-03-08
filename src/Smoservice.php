@@ -16,7 +16,7 @@ class Smoservice{
             "api_key" => $api_key,
             "action" => $action,
         ];
-        return view("smoservice::form",compact('data'));
+        return view("Smoservice::form",compact('data'));
     }
     public static function createOrder(int $user_id,string $api_key,float $action, int $service_id,int $count,string $url){
         $data = [
@@ -27,7 +27,7 @@ class Smoservice{
             "count" => $count,
             "url" => $url,
         ];
-        return view("smoservice::form",compact('data'));
+        return view("Smoservice::form",compact('data'));
     }
     public static function checkOrder(int $user_id,string $api_key,float $action, int $service_id,int $count,string $url){
         $data = [
@@ -36,6 +36,6 @@ class Smoservice{
             "action" => $services,
             "order_id" => $order_id,
         ];
-        return view("smoservice::form",compact('data'));
+        return view("Smoservice::form",compact('data'));
     }
 }
